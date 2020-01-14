@@ -1,6 +1,6 @@
 var bot = require('./bot.js');
 
-bot.onText(/\/MagnaOdyssey/, (msg)=>{
+bot.onText(/\/MagnaOdeyssey/, (msg)=>{
     bot.sendMessage(msg.chat.id, "Please Enter your user ID", {
         reply_markup: JSON.stringify({force_reply: true})
     }).then(sentMessage=>{
@@ -14,6 +14,8 @@ bot.onText(/\/MagnaOdyssey/, (msg)=>{
                 else{
                     userid = reply.text;
                     bot.sendMessage(msg.chat.id, "Successfully registered!");
+
+                    //INSERT INTO innoedge (name, id) VALUES (msg.chat.first_name, userid);
                 }
             }
         )
